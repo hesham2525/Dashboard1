@@ -1,12 +1,13 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import { firestore } from './firebaseConfig'; // Adjust the path as needed
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import { firestore } from "./firebaseConfig"; // Adjust the path as needed
 import { collection, addDoc } from "firebase/firestore";
 
 function BasicExample() {
   async function savedata() {
     const productName = document.getElementById("productName").value;
-    const productDescription = document.getElementById("productDescription").value;
+    const productDescription =
+      document.getElementById("productDescription").value;
     const productPrice = document.getElementById("formBasicPrice").value;
     const productImage = document.getElementById("formBasicImage").value;
 
@@ -33,26 +34,46 @@ function BasicExample() {
   }
 
   return (
-    <div className='container m-auto mt-5 w-50'>
+    <div className="container m-auto mt-5 w-50">
       <Form>
         <Form.Group className="mb-3" controlId="productName">
-          <Form.Label className='h4'>اسم المنتج</Form.Label>
-          <Form.Control className='border-black' type="text" placeholder="اكتب اسم المنتج" />
+          <Form.Label className="h4">اسم المنتج</Form.Label>
+          <Form.Control
+            className="border-black"
+            type="text"
+            placeholder="اكتب اسم المنتج"
+            required
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="productDescription">
-          <Form.Label className='h4'>وصف للمنتج</Form.Label>
-          <Form.Control className='border-black' type="text" placeholder="تفاصيل للمنتج" />
+          <Form.Label className="h4">وصف للمنتج</Form.Label>
+          <Form.Control
+            className="border-black"
+            type="text"
+            placeholder="تفاصيل للمنتج"
+            required
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPrice">
-          <Form.Label className='h4'>سعر للمنتج</Form.Label>
-          <Form.Control className='border-black' type="number" placeholder="سعر للمنتج" />
+          <Form.Label className="h4">سعر للمنتج</Form.Label>
+          <Form.Control
+            className="border-black"
+            type="number"
+            placeholder="سعر للمنتج"
+            required
+          />
         </Form.Group>
-        
+
         <Form.Group className="mb-3" controlId="formBasicImage">
-          <Form.Label className='h4'>صوره للمنتج</Form.Label>
-          <Form.Control className='border-black' type="text" placeholder="رابط صورة للمنتج" />
+          <Form.Label className="h4">صوره للمنتج</Form.Label>
+          <Form.Control
+            className="border-black"
+            type="text"
+            placeholder="رابط صورة للمنتج"
+            required
+          />
         </Form.Group>
 
         <Button variant="primary" onClick={savedata}>
